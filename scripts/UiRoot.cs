@@ -1,23 +1,28 @@
 using Godot;
 using System;
+using System.Linq;
 
 public partial class UiRoot : Control
 {
 
     private string[] prefixes = ["Old", "Great", "Broken", "Magic", "Cursed", "Blessed", "Damaged"];
-    private string[] types = ["sword", "axe", "mace", "wand", "staff", "dagger"];
+    private string[] types = ["Sword", "Axe", "Mace", "Wand", "Staff", "Dagger"];
     private string[] suffixes = ["of Ancients", "of Burning Embers", "of the Wise", "of Dragons", "of Calamity"];
 
 
 
     public void OnButtonClick()
     {
+        Random random = new Random();
 
+        string newPrefix = prefixes[random.Next(0, prefixes.Count())];
+        string newType = types[random.Next(0, types.Count())];
+        string newSuffix = suffixes[random.Next(0, suffixes.Count())];
+
+        Item newItem = new Builder().SetPrefix(newPrefix).SetType(newType).SetSuffix(newSuffix).BuildItem();
+
+        GetNode<Label>("/root/UiRoot/Label").Text = "Chest Content: " + newItem.GetName();
     }
-
-
-
-
 
 
 
@@ -50,9 +55,9 @@ public class Builder
         return this;
     }
 
-    public string BuildItem()
+    public Item BuildItem()
     {
-        return item.GetName();
+        return item;
     }
 
 }
