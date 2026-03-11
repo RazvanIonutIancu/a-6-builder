@@ -9,8 +9,11 @@
 [node name="Cube" type="Area3D"]
 script = ExtResource("1_7ufek")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+[node name="Mesh" type="MeshInstance3D" parent="."]
+visible = false
 mesh = SubResource("BoxMesh_5rbgv")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="Collision" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_5rbgv")
+
+[connection signal="input_event" from="." to="." method="OnMouseClick"]

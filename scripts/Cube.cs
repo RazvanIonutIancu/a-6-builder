@@ -3,13 +3,39 @@ using System;
 
 public partial class Cube : Area3D
 {
-	// Called when the node enters the scene tree for the first time.
-	public override void _Ready()
-	{
-	}
 
-	// Called every frame. 'delta' is the elapsed time since the previous frame.
-	public override void _Process(double delta)
-	{
-	}
+    private Commander commander;
+
+
+    public override void _Ready()
+    {
+        commander = GetNode<Commander>("/root/TileClicker/Commander");
+    }
+
+
+
+
+
+
+
+
+
+
+
+    private void OnMouseClick(Node camera, InputEvent newEvent, Vector3 event_position, Vector3 normal, int shape_idx)
+    {
+        if (newEvent is InputEventMouseButton mouseEvent)
+        {
+            if (mouseEvent.ButtonIndex == MouseButton.Left && mouseEvent.Pressed)
+            {
+                commander.ShowTile(this);
+            }
+            else if (mouseEvent.ButtonIndex == MouseButton.Right && mouseEvent.Pressed)
+            {
+                commander.HideTile(this);
+            }
+
+        }
+
+    }
 }

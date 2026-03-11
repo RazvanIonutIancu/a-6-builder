@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://b06hnocsoqrl8"]
 
-[ext_resource type="Script" uid="uid://d04mwxdpm8wo3" path="res://scripts/Base.cs" id="1_2ygbb"]
+[ext_resource type="Script" uid="uid://b0rn8uyw2sbay" path="res://scripts/Commander.cs" id="1_s2ugh"]
 [ext_resource type="PackedScene" uid="uid://b0812vs50b62c" path="res://scenes/cube.tscn" id="2_s2ugh"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lyb0w"]
@@ -12,8 +12,10 @@ size = Vector3(5, 0, 5)
 
 [node name="TileClicker" type="Node"]
 
+[node name="Commander" type="Node" parent="."]
+script = ExtResource("1_s2ugh")
+
 [node name="Base" type="Area3D" parent="."]
-script = ExtResource("1_2ygbb")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Base"]
 mesh = SubResource("BoxMesh_2ygbb")
