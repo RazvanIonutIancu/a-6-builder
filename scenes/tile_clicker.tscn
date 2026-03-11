@@ -1,0 +1,102 @@
+[gd_scene load_steps=5 format=3 uid="uid://b06hnocsoqrl8"]
+
+[ext_resource type="Script" uid="uid://d04mwxdpm8wo3" path="res://scripts/Base.cs" id="1_2ygbb"]
+[ext_resource type="PackedScene" uid="uid://b0812vs50b62c" path="res://scenes/cube.tscn" id="2_s2ugh"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lyb0w"]
+albedo_color = Color(0.3515629, 0.3515629, 0.35156286, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_2ygbb"]
+material = SubResource("StandardMaterial3D_lyb0w")
+size = Vector3(5, 0, 5)
+
+[node name="TileClicker" type="Node"]
+
+[node name="Base" type="Area3D" parent="."]
+script = ExtResource("1_2ygbb")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Base"]
+mesh = SubResource("BoxMesh_2ygbb")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.9811749, -0.17156765, 0.08865888, -2.70278e-09, 0.45908383, 0.888393, -0.19312134, -0.8716689, 0.4504415, 0.5580914, 3.2430882, 2.6255307)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.015654953, 0.99987745, 0, -0.99987745, 0.015654953, 0, 5.675044, 0)
+shadow_enabled = true
+
+[node name="Tiles" type="Node" parent="."]
+
+[node name="Cube" parent="Tiles" instance=ExtResource("2_s2ugh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 2)
+
+[node name="Cube2" parent="Tiles" instance=ExtResource("2_s2ugh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 2)
+
+[node name="Cube3" parent="Tiles" instance=ExtResource("2_s2ugh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+
+[node name="Cube4" parent="Tiles" instance=ExtResource("2_s2ugh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 2)
+
+[node name="Cube5" parent="Tiles" instance=ExtResource("2_s2ugh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 2)
+
+[node name="Cube6" parent="Tiles" instance=ExtResource("2_s2ugh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 1)
+
+[node name="Cube7" parent="Tiles" instance=ExtResource("2_s2ugh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 1)
+
+[node name="Cube8" parent="Tiles" instance=ExtResource("2_s2ugh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
+
+[node name="Cube9" parent="Tiles" instance=ExtResource("2_s2ugh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 1)
+
+[node name="Cube10" parent="Tiles" instance=ExtResource("2_s2ugh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 1)
+
+[node name="Cube11" parent="Tiles" instance=ExtResource("2_s2ugh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0)
+
+[node name="Cube12" parent="Tiles" instance=ExtResource("2_s2ugh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+
+[node name="Cube13" parent="Tiles" instance=ExtResource("2_s2ugh")]
+
+[node name="Cube14" parent="Tiles" instance=ExtResource("2_s2ugh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
+
+[node name="Cube15" parent="Tiles" instance=ExtResource("2_s2ugh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0)
+
+[node name="Cube16" parent="Tiles" instance=ExtResource("2_s2ugh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -1)
+
+[node name="Cube17" parent="Tiles" instance=ExtResource("2_s2ugh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -1)
+
+[node name="Cube18" parent="Tiles" instance=ExtResource("2_s2ugh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
+
+[node name="Cube19" parent="Tiles" instance=ExtResource("2_s2ugh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -1)
+
+[node name="Cube20" parent="Tiles" instance=ExtResource("2_s2ugh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -1)
+
+[node name="Cube21" parent="Tiles" instance=ExtResource("2_s2ugh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -2)
+
+[node name="Cube22" parent="Tiles" instance=ExtResource("2_s2ugh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -2)
+
+[node name="Cube23" parent="Tiles" instance=ExtResource("2_s2ugh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2)
+
+[node name="Cube24" parent="Tiles" instance=ExtResource("2_s2ugh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -2)
+
+[node name="Cube25" parent="Tiles" instance=ExtResource("2_s2ugh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -2)

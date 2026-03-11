@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://b0812vs50b62c"]
+
+[ext_resource type="Script" uid="uid://20jbqjuw4nb0" path="res://scripts/Cube.cs" id="1_7ufek"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_5rbgv"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5rbgv"]
+
+[node name="Cube" type="Area3D"]
+script = ExtResource("1_7ufek")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_5rbgv")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_5rbgv")
